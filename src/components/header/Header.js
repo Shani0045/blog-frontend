@@ -49,11 +49,11 @@ function Header() {
                   BLOGS
                 </Link>
               </li>
-              <li className="nav-item">
+              {/* <li className="nav-item">
                 <Link className="nav-link" to="/#">
                   ABOUT
                 </Link>
-              </li>
+              </li> */}
               <li className="nav-item">
                 <Link className="nav-link" to="/contact">
                   CONTACT
@@ -68,14 +68,14 @@ function Header() {
             <button
               type="submit"
               id="form-submit"
-              class="main-button btn btn-warning text-white btn-sm mx-2 my-3"
+              class="main-button btn mx-2 my-3"
             >
               Sign In
             </button>
             <button
               type="submit"
               id="form-submit"
-              class="main-button btn btn-warning text-white btn-sm my-3"
+              class="main-button btn my-3"
             >
               Sign Up
             </button>

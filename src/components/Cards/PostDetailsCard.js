@@ -4,7 +4,7 @@ import CodeBlockCard from "./CodeBlockCard";
 function PostDetailsCard() {
   return (
     <div className="blog-post">
-      <div className="down-content p-5">
+      <div className="down-content p-lg-5">
         <span>Devops</span>
           <h4>How To Deploy Flask Application Using Docker On Kubernetes</h4>
         <ul className="post-info">

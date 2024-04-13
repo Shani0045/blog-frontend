@@ -24,7 +24,7 @@ function CommentCard() {
               </p>
             </div>
           </li>
-          <li className="replied">
+          <li>
             <div className="author-thumb">
               <img src="assets/images/comment-author-02.jpg" alt />
             </div>
@@ -54,7 +54,7 @@ function CommentCard() {
               </p>
             </div>
           </li>
-          <li className="replied">
+          <li>
             <div className="author-thumb">
               <img src="assets/images/comment-author-02.jpg" alt />
             </div>

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function BlogCard() {
   return (
@@ -8,9 +9,9 @@ function BlogCard() {
       </div>
       <div className="down-content">
         <span>Lifestyle</span>
-        <a href="/post-details">
+        <Link to="/post-details">
           <h4>Donec tincidunt leo</h4>
-        </a>
+        </Link>
         <ul className="post-info">
           <li>
             <a href="#">Admin</a>
@@ -34,10 +35,10 @@ function BlogCard() {
                   <i className="fa fa-tags" />
                 </li>
                 <li>
-                  <a href="#">Best Templates</a>,
+                  <Link to="#">Best Templates</Link>,
                 </li>
                 <li>
-                  <a href="#">TemplateMo</a>
+                  <Link to="#">TemplateMo</Link>
                 </li>
               </ul>
             </div>

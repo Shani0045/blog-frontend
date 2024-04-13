@@ -222,6 +222,14 @@ header .navbar {
 .navbar-collapse {
 	text-align: center;
 }
+.navbar-collapse .main-button{
+	border: none;
+	background-color: #f48840;
+	color: #fff;
+	font-size: 13px;
+	font-weight: 500;
+}
+
 .navbar .navbar-nav .nav-item {
 	margin: 0px 15px;
 }
