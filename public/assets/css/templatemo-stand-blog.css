@@ -397,9 +397,9 @@ header .navbar {
 
 /* Blog Posts */
 
-.blog-posts {
-	margin-top: 100px;
-}
+/* .blog-posts {
+	margin-top: 10px;
+} */
 
 .blog-posts .blog-post {
 	margin-bottom: 30px;
@@ -852,10 +852,10 @@ footer p a:hover {
 
 /* Contact Form */
 
-.contact-us .down-contact,
+/* .contact-us .down-contact,
 .contact-us #map {
-	margin-top: 80px;
-}
+	margin-top: 8px;
+} */
 
 .contact-us .sidebar-heading h2 {
 	font-size: 18px;

@@ -4,13 +4,13 @@ import Layout from '../../components/layout/Layout'
 function Contact() {
   return (
     <Layout>        
-        <section className="contact-us">
+        <section className="contact-us mt-3">
                 <div className="container">
                 <div className="row">
                     <div className="col-lg-12">
                     <div className="down-contact">
                         <div className="row">
-                        <div className="col-lg-8 shadow-sm bg-info border py-3">
+                        <div className="col-lg-8 shadow-sm border py-3">
                             <div className="sidebar-item contact-form ">
                             <div className="sidebar-heading">
                                 <h2>Send us a message</h2>

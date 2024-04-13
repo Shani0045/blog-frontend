@@ -5,9 +5,8 @@ import Tags from '../tags/Tags'
 
 function HomeRightSideBar() {
   return (
-    <div className="col-lg-4">
         <div className="sidebar">
-        <div className="row"> 
+        <div className="row">    
             <div className="col-lg-12">
                 <RelatedPost/>
             </div>
@@ -21,7 +20,6 @@ function HomeRightSideBar() {
             </div>
         </div>
         </div>
-    </div>
   )
 }
 
