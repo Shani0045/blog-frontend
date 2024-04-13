@@ -7,7 +7,7 @@ function Header() {
         <div className="container">
           <Link className="navbar-brand" to="index.html">
             <h2>
-              E-LEARNING<em></em>
+              E-LEARNING<em>.</em>
             </h2>
           </Link>
           <button
@@ -40,28 +40,28 @@ function Header() {
             <ul className="navbar-nav ml-auto">
               <li className="nav-item active">
                 <Link className="nav-link" to="/">
-                  Home
+                  HOME
                   <span className="sr-only">(current)</span>
                 </Link>
               </li>
               <li className="nav-item">
                 <Link className="nav-link" to="/blogs">
-                  Blogs
+                  BLOGS
                 </Link>
               </li>
               <li className="nav-item">
                 <Link className="nav-link" to="/#">
-                  About
+                  ABOUT
                 </Link>
               </li>
               <li className="nav-item">
                 <Link className="nav-link" to="/contact">
-                  Contact
+                  CONTACT
                 </Link>
               </li>
               <li className="nav-item">
                 <Link className="nav-link" to="/">
-                  Write
+                  WRITE
                 </Link>
               </li>
             </ul>

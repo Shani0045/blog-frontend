@@ -51,7 +51,7 @@ function Contact() {
                         <div className="col-lg-4">
                             <div className="sidebar-item contact-information">
                             <div className="sidebar-heading">
-                                <h2>contact information</h2>
+                                <h2>Contact Information</h2>
                             </div>
                             <div className="content">
                                 <ul>

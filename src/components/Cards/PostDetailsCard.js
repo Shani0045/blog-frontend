@@ -1,16 +1,12 @@
 import React from "react";
+import CodeBlockCard from "./CodeBlockCard";
 
 function PostDetailsCard() {
   return (
     <div className="blog-post">
-      <div className="blog-thumb">
-        <img src="assets/images/blog-post-02.jpg" alt />
-      </div>
-      <div className="down-content">
-        <span>Lifestyle</span>
-        <a href="/post-details">
-          <h4>Aenean pulvinar gravida sem nec</h4>
-        </a>
+      <div className="down-content p-5">
+        <span>Devops</span>
+          <h4>How To Deploy Flask Application Using Docker On Kubernetes</h4>
         <ul className="post-info">
           <li>
             <a href="#">Admin</a>
@@ -22,38 +18,41 @@ function PostDetailsCard() {
             <a href="#">10 Comments</a>
           </li>
         </ul>
+
+        <div className="blog-thumb mt-2">
+            <img src="assets/images/blog-post-02.jpg" alt />
+        </div>
+
         <p>
-          You can browse different tags such as{" "}
-          <a
-            rel="nofollow"
-            href="https://templatemo.com/tag/multi-page"
-            target="_parent"
-          >
-            multi-page
-          </a>
-          ,{" "}
-          <a
-            rel="nofollow"
-            href="https://templatemo.com/tag/resume"
-            target="_parent"
-          >
-            resume
-          </a>
-          ,{" "}
-          <a
-            rel="nofollow"
-            href="https://templatemo.com/tag/video"
-            target="_parent"
-          >
-            video
-          </a>
-          , etc. to see more CSS templates. Sed hendrerit rutrum arcu, non
-          malesuada nisi. Sed id facilisis turpis. Donec justo elit, dapibus vel
-          ultricies in, molestie sit amet risus. In nunc augue, rhoncus sed
-          libero et, tincidunt tempor nisl. Donec egestas, quam eu rutrum
-          ultrices, sapien ante posuere nisl, ac eleifend eros orci vel ante.
-          Pellentesque vitae eleifend velit. Etiam blandit felis sollicitudin
-          vestibulum feugiat.
+            Step1. Create simple flask app
+
+            Flask is a python lightweight framwork for web application with minimal no of code you can develope your application in no time.
+
+            Create requirements.txt file that contains all library and package for your application and app.py file for your application.
+          <br />
+          <CodeBlockCard codeString={"console.log('hello World!')"} language={"python"}/>
+          
+          <br />
+          Donec tincidunt leo nec magna gravida varius. Suspendisse felis orci,
+          egestas ac sodales quis, venenatis et neque. Vivamus facilisis
+          dignissim arcu et blandit. Maecenas finibus dui non pulvinar lacinia.
+          Ut lacinia finibus lorem vel porttitor. Suspendisse et metus nec
+          libero ultrices varius eget in risus. Cras id nibh at erat pulvinar
+          malesuada et non ipsum. Suspendisse id ipsum leo.
+        </p>
+
+        <div className="col-lg-12 p-0">
+          <CodeBlockCard codeString={"console.log('hello World!')"} language={"python"}/>
+        </div>
+
+        <p>
+          You can browse different tags such as , etc. to see more CSS
+          templates. Sed hendrerit rutrum arcu, non malesuada nisi. Sed id
+          facilisis turpis. Donec justo elit, dapibus vel ultricies in, molestie
+          sit amet risus. In nunc augue, rhoncus sed libero et, tincidunt tempor
+          nisl. Donec egestas, quam eu rutrum ultrices, sapien ante posuere
+          nisl, ac eleifend eros orci vel ante. Pellentesque vitae eleifend
+          velit. Etiam blandit felis sollicitudin vestibulum feugiat.
           <br />
           <br />
           Donec tincidunt leo nec magna gravida varius. Suspendisse felis orci,
@@ -63,6 +62,7 @@ function PostDetailsCard() {
           libero ultrices varius eget in risus. Cras id nibh at erat pulvinar
           malesuada et non ipsum. Suspendisse id ipsum leo.
         </p>
+
         <div className="post-options">
           <div className="row">
             <div className="col-6">

@@ -10,6 +10,18 @@ function Posts() {
           <PostCard />
         </div>
         <div className="col-lg-12">
+          <PostCard />
+        </div>
+        <div className="col-lg-12">
+          <PostCard />
+        </div>
+        <div className="col-lg-12">
+          <PostCard />
+        </div>
+        <div className="col-lg-12">
+          <PostCard />
+        </div>
+        <div className="col-lg-12">
           <div className="main-button">
             <Link to="/blogs">View All Posts</Link>
           </div>

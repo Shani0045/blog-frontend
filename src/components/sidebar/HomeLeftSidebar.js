@@ -3,7 +3,9 @@ import Posts from '../posts/Posts'
 
 function HomeLeftSidebar() {
   return (
-        <Posts/>
+       <>
+         <Posts/>
+       </>
   )
 }
 

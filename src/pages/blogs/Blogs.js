@@ -2,6 +2,7 @@ import React from "react";
 import Layout from "../../components/layout/Layout";
 import HomeRightSideBar from "../../components/sidebar/HomeRightSideBar";
 import BlogCard from "../../components/Cards/BlogCard";
+import Pagination from "../../components/pagination/Pagination";
 
 function Blogs() {
   return (
@@ -18,6 +19,9 @@ function Blogs() {
                   <div className="col-lg-6">
                     <BlogCard />
                   </div>
+                </div>
+                <div class="col-lg-12">
+                   <Pagination/>
                 </div>
               </div>
             </div>
