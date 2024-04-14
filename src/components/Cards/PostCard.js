@@ -4,12 +4,12 @@ function PostCard() {
   return (
     <div className="blog-post">
       <div className="blog-thumb">
-        <img src="assets/images/blog-post-01.jpg" alt />
+        <img src="assets/images/docker.png" alt />
       </div>
       <div className="down-content">
-        <span>Lifestyle</span>
+        <span>devops</span>
         <Link to="/post-details">
-          <h4>Best Template Website for HTML CSS</h4>
+          <h4>How to Deploy Flask app using Docker on kubernetes</h4>
         </Link>
         <ul className="post-info">
           <li>

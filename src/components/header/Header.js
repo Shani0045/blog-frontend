@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 function Header() {
   return (
@@ -7,7 +7,7 @@ function Header() {
         <div className="container">
           <Link className="navbar-brand" to="index.html">
             <h2>
-              E-LEARNING<em>.</em>
+              E-learning<em>.com</em>
             </h2>
           </Link>
           <button
@@ -38,30 +38,30 @@ function Header() {
             </div>
             </div> */}
             <ul className="navbar-nav ml-auto">
-              <li className="nav-item active">
-                <Link className="nav-link" to="/">
+              <li className="nav-item {window.location.href}">
+                <NavLink className="nav-link" to="/" activeClassName="active">
                   HOME
                   <span className="sr-only">(current)</span>
-                </Link>
+                </NavLink>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/blogs">
+                <NavLink className="nav-link" to="/blogs" activeClassName="active">
                   BLOGS
-                </Link>
+                </NavLink>
               </li>
-              {/* <li className="nav-item">
-                <Link className="nav-link" to="/#">
-                  ABOUT
-                </Link>
-              </li> */}
               <li className="nav-item">
-                <Link className="nav-link" to="/contact">
+                <NavLink className="nav-link" to="/contact" activeClassName="active">
                   CONTACT
-                </Link>
+                </NavLink>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/">
+                <NavLink className="nav-link" to="/blog-writer" activeClassName="active">
                   WRITE
+                </NavLink>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link" to="/#">
+                  FEEDBACK
                 </Link>
               </li>
             </ul>

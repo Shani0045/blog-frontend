@@ -22,7 +22,7 @@ return (
     language={props.language}
     showLineNumbers={true}
     wrapLines
-    theme={github}
+    theme={a11yDark}
   />
   </div>
 );

@@ -19,8 +19,8 @@ function PostDetailsCard() {
           </li>
         </ul>
 
-        <div className="blog-thumb mt-2">
-            <img src="assets/images/blog-post-02.jpg" alt />
+        <div className="blog-thumb mt-2 p-lg-5">
+            <img src="assets/images/docker.png" alt />
         </div>
 
         <p>

@@ -683,9 +683,9 @@ ul.page-numbers li a:hover {
 	margin-left: 30px;
 }
 
-.sidebar .sidebar-item {
+/* .sidebar .sidebar-item {
 	margin-top: 50px;
-}
+} */
 
 .sidebar .search, .search {
 	margin-top: 0px;
@@ -1099,3 +1099,4 @@ footer p a:hover {
 		margin-top: 60px;
 	}
 }
+

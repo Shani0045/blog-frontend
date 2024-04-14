@@ -12,13 +12,10 @@ function Footer() {
                 <a href="#">Twitter</a>
               </li>
               <li>
-                <a href="#">Behance</a>
-              </li>
-              <li>
                 <a href="#">Linkedin</a>
               </li>
               <li>
-                <a href="#">Dribbble</a>
+                <a href="#">Instagram</a>
               </li>
             </ul>
           </div>

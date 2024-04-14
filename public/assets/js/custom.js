@@ -88,5 +88,23 @@ jQuery( document ).ready(function( $ ) {
                 }
             });
         }
- 
+
+        // $('.edit').keydown(function(event) {
+        //     // Check if the Enter key (key code 13) is pressed
+        //     if (event.which === 13) {
+        //         // Prevent the default behavior (inserting a newline)
+        //         event.preventDefault();
+        //         const selection = window.getSelection();
+        //         const range = selection.getRangeAt(0);
+        //         const p = document.createElement('p');
+        //         range.deleteContents();
+        //         range.insertNode(p);
+                
+        //         // Move the cursor to the end of the inserted line
+        //         range.setStartAfter(p);
+        //         range.setEndAfter(p);
+        //         selection.removeAllRanges();
+        //         selection.addRange(range);
+        //     }
+        // });
 });
