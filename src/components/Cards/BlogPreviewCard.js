@@ -3,8 +3,17 @@ import CodeBlockCard from "./CodeBlockCard";
 import { useRef, useEffect } from "react";
 import { useSelector } from "react-redux";
 
-function PostDetailsCard() {
-  
+function BlogPreviewCard() {
+  let {loading, error, data} =  useSelector((state)=> state.globalData) 
+  const contentRef = useRef(null);
+
+  useEffect(() => {
+    if (contentRef.current) {
+      contentRef.current.innerHTML = data;
+    }
+  }, []);
+
+
   return (
     <div className="blog-post">
       <div className="down-content p-lg-5">
@@ -14,14 +23,15 @@ function PostDetailsCard() {
             <a href="#">Admin</a>
           </li>
           <li>
-            <a href="#">May 12, 2020</a>
+            <a href="#">May 12, 2024</a>
           </li>
           <li>
             <a href="#">10 Comments</a>
           </li>
         </ul>
 
-      <div className="post-content mt-3">
+      {/* <CodeBlockCard  language={"python"} /> */}
+      <div className="post-content mt-3" ref={contentRef}>
       </div>
       
         <div className="post-options">
@@ -59,4 +69,4 @@ function PostDetailsCard() {
   );
 }
 
-export default PostDetailsCard;
+export default BlogPreviewCard;

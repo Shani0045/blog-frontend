@@ -1,5 +1,5 @@
 import React from 'react'
-import {CodeBlock, github, CopyBlock, atomOneDark, a11yDark} from 'react-code-blocks';
+import {CodeBlock, github, CopyBlock, atomOneDark, a11yDark, a11yLight, atomOneLight} from 'react-code-blocks';
 
 function CodeBlockCard(props) {
   const codeString = `from django.http import HttpResponse
@@ -18,11 +18,11 @@ function CodeBlockCard(props) {
 return (
   <div className='code-block my-2 border'>
     <CodeBlock
-    text={codeString}
+    text={props.codeString}
     language={props.language}
     showLineNumbers={true}
     wrapLines
-    theme={a11yDark}
+    theme={a11yLight}
   />
   </div>
 );
