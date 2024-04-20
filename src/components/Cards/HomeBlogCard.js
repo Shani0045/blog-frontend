@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-function PostCard() {
+function BlogCard() {
   return (
     <div className="blog-post">
       <div className="blog-thumb">
@@ -72,4 +72,4 @@ function PostCard() {
   );
 }
 
-export default PostCard;
+export default BlogCard;

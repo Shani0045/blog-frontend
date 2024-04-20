@@ -1,17 +1,34 @@
 import React from "react";
 import CodeBlockCard from "./CodeBlockCard";
 import { useRef, useEffect } from "react";
-import { useSelector } from "react-redux";
+import { BLOG_DETAILS_REQUEST } from "../../redux/actionTypes/blogDetailsType";
+import { useDispatch, useSelector } from "react-redux";
+import hljs from 'highlight.js';
+import 'highlight.js/styles/default.css';
+
 
 function BlogPreviewCard() {
   let {loading, error, data} =  useSelector((state)=> state.globalData) 
   const contentRef = useRef(null);
 
+  const dispatch = useDispatch()
+
+
   useEffect(() => {
+
+    // dispatch({"type":POST_REQUEST, payload:{}})
+
     if (contentRef.current) {
-      contentRef.current.innerHTML = data;
+        contentRef.current.innerHTML = data;
+        const preTag = document.createElement('pre');
+        // preTag.textContent = dynamicContent;
+        document.querySelectorAll("td").forEach((el) => {
+        // el.setAttribute("class", "language-python")
+        // hljs.highlightElement(el);
+
+      });
     }
-  }, []);
+  });
 
 
   return (

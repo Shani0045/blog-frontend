@@ -1,6 +1,6 @@
 import React from "react";
 import Layout from "../../components/layout/Layout";
-import PostDetailsCard from "../../components/Cards/PostDetailsCard";
+import BlogDetailsCard from "../../components/Cards/BlogDetailsCard";
 import CommentCard from "../../components/Cards/CommentCard";
 import CommentFormCard from "../../components/Cards/CommentFormCard";
 import HomeRightSideBar from "../../components/sidebar/HomeRightSideBar";

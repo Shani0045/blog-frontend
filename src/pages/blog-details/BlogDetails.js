@@ -1,11 +1,15 @@
 import React from "react";
 import Layout from "../../components/layout/Layout";
-import PostDetailsCard from "../../components/Cards/PostDetailsCard";
+import BlogDetailsCard from "../../components/Cards/BlogDetailsCard";
 import CommentCard from "../../components/Cards/CommentCard";
 import CommentFormCard from "../../components/Cards/CommentFormCard";
 import HomeRightSideBar from "../../components/sidebar/HomeRightSideBar";
+import { useParams } from "react-router-dom";
 
-function PostDetails() {
+function BlogDetails() {
+
+  const {slug} = useParams()
+
   return (
     <Layout>
       <section className="blog-posts grid-system">
@@ -15,7 +19,7 @@ function PostDetails() {
               <div className="all-blog-posts">
                 <div className="row">
                   <div className="col-lg-12">
-                    <PostDetailsCard/>
+                    <BlogDetailsCard slug={slug} />
                     </div>
                   <div className="col-lg-7">
                     <CommentCard/>
@@ -37,4 +41,4 @@ function PostDetails() {
   );
 }
 
-export default PostDetails;
+export default BlogDetails;

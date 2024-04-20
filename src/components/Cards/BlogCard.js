@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-function BlogCard() {
+function HomeBlogCard() {
   return (
     <div className="blog-post">
       <div className="blog-thumb">
@@ -49,4 +49,4 @@ function BlogCard() {
   );
 }
 
-export default BlogCard;
+export default HomeBlogCard;

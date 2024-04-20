@@ -16,7 +16,7 @@ function Contact() {
                                 <h2>Send us a message</h2>
                             </div>
                             <div className="content">
-                                <form id="contact" action method="post">
+                                <form id="contact" action="" method="post">
                                 <div className="row">
                                     <div className="col-md-6 col-sm-12">
                                     <fieldset>

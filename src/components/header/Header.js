@@ -7,7 +7,7 @@ function Header() {
         <div className="container">
           <Link className="navbar-brand" to="index.html">
             <h2>
-              E-learning<em>.com</em>
+              codeLearn<em>.com</em>
             </h2>
           </Link>
           <button
@@ -39,23 +39,23 @@ function Header() {
             </div> */}
             <ul className="navbar-nav ml-auto">
               <li className="nav-item {window.location.href}">
-                <NavLink className="nav-link" to="/" activeClassName="active">
+                <NavLink className="nav-link" to="/" activeclassname="active">
                   HOME
                   <span className="sr-only">(current)</span>
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink className="nav-link" to="/blogs" activeClassName="active">
+                <NavLink className="nav-link" to="/blogs" activeclassname="active">
                   BLOGS
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink className="nav-link" to="/contact" activeClassName="active">
+                <NavLink className="nav-link" to="/contact" activeclassname="active">
                   CONTACT
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink className="nav-link" to="/blog-writer" activeClassName="active">
+                <NavLink className="nav-link" to="/blog-writer" activeclassname="active">
                   WRITE
                 </NavLink>
               </li>
@@ -68,14 +68,14 @@ function Header() {
             <button
               type="submit"
               id="form-submit"
-              class="main-button btn mx-2 my-3"
+              className="main-button btn mx-2 my-3"
             >
               Sign In
             </button>
             <button
               type="submit"
               id="form-submit"
-              class="main-button btn my-3"
+              className="main-button btn my-3"
             >
               Sign Up
             </button>

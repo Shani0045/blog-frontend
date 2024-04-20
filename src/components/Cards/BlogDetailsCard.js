@@ -1,11 +1,33 @@
 import React from "react";
 import CodeBlockCard from "./CodeBlockCard";
 import { useRef, useEffect } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import hljs from 'highlight.js';
+import 'highlight.js/styles/default.css';
+import { blogDetailsRequest } from "../../redux/actions/blogDetailsAction";
 
-function PostDetailsCard() {
+function PostDetailsCard(props) {
+  const contentRef = useRef(null)
+  const dispatch = useDispatch()
+  const {loading, data, error} = useSelector((state)=> state.blogDetails)
   
+  useEffect(() => {
+    dispatch(blogDetailsRequest(props.slug));
+  }, [dispatch]);
+
+
+  useEffect(() => {
+    if (!loading && data.length) {
+      const dataObj = data[0];
+      const content = dataObj.content;
+      contentRef.current.innerHTML = content;
+      hljs.highlightAll();
+    }
+  }, [loading, data]);
+
+
   return (
+    
     <div className="blog-post">
       <div className="down-content p-lg-5">
         <span>Devops</span>
@@ -21,7 +43,7 @@ function PostDetailsCard() {
           </li>
         </ul>
 
-      <div className="post-content mt-3">
+      <div className="post-content mt-3" ref={contentRef}>
       </div>
       
         <div className="post-options">

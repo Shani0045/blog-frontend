@@ -1,25 +1,25 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import PostCard from "../Cards/PostCard";
+import HomeBlogCard from "../Cards/HomeBlogCard";
 
 function Posts() {
   return (
     <div className="all-blog-posts">
       <div className="row">
         <div className="col-lg-12">
-          <PostCard />
+          <HomeBlogCard />
         </div>
         <div className="col-lg-12">
-          <PostCard />
+          <HomeBlogCard/>
         </div>
         <div className="col-lg-12">
-          <PostCard />
+          <HomeBlogCard />
         </div>
         <div className="col-lg-12">
-          <PostCard />
+          <HomeBlogCard />
         </div>
         <div className="col-lg-12">
-          <PostCard />
+          <HomeBlogCard />
         </div>
         <div className="col-lg-12">
           <div className="main-button">

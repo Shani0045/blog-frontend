@@ -11,6 +11,7 @@ const CkEditor = () => {
 
     const handleEditorChange = (event, editor) => {
         const data = editor.getData();
+        console.log(data)
         dispatch({type: "ckEditorData", payload: data})
     };
 
