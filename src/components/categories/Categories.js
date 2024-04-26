@@ -1,19 +1,21 @@
 import React from 'react'
+import { useSelector } from 'react-redux'
 
 function Categories() {
+  const {loading, data, error } = useSelector( state => state.allBlog)
+
   return (
     <div className="sidebar-item categories">
       <div className="sidebar-heading">
       <h2>Categories</h2>
       </div>
       <div className="content">
-      <ul>
-          <li><a href="#">- Nature Lifestyle</a></li>
-          <li><a href="#">- Awesome Layouts</a></li>
-          <li><a href="#">- Creative Ideas</a></li>
-          <li><a href="#">- Responsive Templates</a></li>
-          <li><a href="#">- HTML5 / CSS3 Templates</a></li>
-          <li><a href="#">- Creative &amp; Unique</a></li>
+      <ul>{
+            data && data.data && data.data.categories && 
+            data.data.categories.map( c => (
+              <li><a href="#">- {c.name}</a></li>
+            ))
+          }
       </ul>
       </div>
     </div>

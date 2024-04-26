@@ -1,7 +1,7 @@
 import React from "react";
 import CodeBlockCard from "./CodeBlockCard";
 import { useRef, useEffect } from "react";
-import { BLOG_DETAILS_REQUEST } from "../../redux/actionTypes/blogDetailsType";
+import { BLOG_DETAILS_REQUEST } from "../../redux/actionTypes/blogs/blogDetailsType";
 import { useDispatch, useSelector } from "react-redux";
 import hljs from 'highlight.js';
 import 'highlight.js/styles/default.css';

@@ -1,6 +1,6 @@
 // import postType from '../actionTypes/postType'
 
-import { BLOG_DETAILS_REQUEST, BLOG_DETAILS_SUCCESS, BLOG_DETAILS_FAIL } from "../actionTypes/blogDetailsType";
+import { ALL_BLOG_REQUEST, ALL_BLOG_SUCCESS, ALL_BLOG_FAIL } from "../../actionTypes/blogs/allBlogType";
 
 const initialState = {
       loading: false,
@@ -8,16 +8,16 @@ const initialState = {
       data: {}
   };
 
-const blogDetailsReducer = (state = initialState, action) => {
+const allBlogReducer = (state = initialState, action) => {
 
     switch (action.type) {
-      case BLOG_DETAILS_REQUEST:
+      case ALL_BLOG_REQUEST:
         return {
           ...state,
           loading : true
         };
   
-      case BLOG_DETAILS_SUCCESS:
+      case ALL_BLOG_SUCCESS:
         return {
           ...state,
             loading: false,
@@ -25,7 +25,7 @@ const blogDetailsReducer = (state = initialState, action) => {
             data: action.payload
         };
   
-      case BLOG_DETAILS_FAIL:
+      case ALL_BLOG_FAIL:
         return {
           ...state,
             loading: false,
@@ -38,5 +38,5 @@ const blogDetailsReducer = (state = initialState, action) => {
     }
 };
 
-export default blogDetailsReducer
+export default allBlogReducer
 

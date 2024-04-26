@@ -20,7 +20,7 @@ function Contact() {
                                 <div className="row">
                                     <div className="col-md-6 col-sm-12">
                                     <fieldset>
-                                        <input name="name" type="text" id="name" placeholder="Your name" required />
+                                        <input type="text" autocomplete="off" name="name" class="input" placeholder="Your Name" />
                                     </fieldset>
                                     </div>
                                     <div className="col-md-6 col-sm-12">

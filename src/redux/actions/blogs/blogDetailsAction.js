@@ -1,4 +1,4 @@
-import { BLOG_DETAILS_REQUEST, BLOG_DETAILS_SUCCESS, BLOG_DETAILS_FAIL } from "../actionTypes/blogDetailsType"
+import { BLOG_DETAILS_REQUEST, BLOG_DETAILS_SUCCESS, BLOG_DETAILS_FAIL } from "../../actionTypes/blogs/blogDetailsType"
 
 export const blogDetailsRequest = (data)=> {
    return {

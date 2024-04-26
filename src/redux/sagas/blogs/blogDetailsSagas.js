@@ -1,7 +1,7 @@
 import { call, put, takeLatest, takeEvery } from "redux-saga/effects";
-import { blogDetails } from '../../services/blogService'
-import {blogDetailsRequest, blogDetailsSuccess, blogDetailsError} from '../actions/blogDetailsAction'
-import { BLOG_DETAILS_REQUEST } from "../actionTypes/blogDetailsType";
+import { blogDetails } from '../../../services/blogs/blogService'
+import {blogDetailsRequest, blogDetailsSuccess, blogDetailsError} from '../../actions/blogs/blogDetailsAction'
+import { BLOG_DETAILS_REQUEST } from "../../actionTypes/blogs/blogDetailsType";
 
 
 export function* blogDetailsSaga(action) {

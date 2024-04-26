@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-function BlogCard() {
+function BlogCard(props) {
   return (
     <div className="blog-post">
       <div className="blog-thumb">
@@ -8,8 +8,8 @@ function BlogCard() {
       </div>
       <div className="down-content">
         <span>devops</span>
-        <Link to="/post-details">
-          <h4>How to Deploy Flask app using Docker on kubernetes</h4>
+        <Link to={props.slug}>
+          <h4>{props.title}</h4>
         </Link>
         <ul className="post-info">
           <li>
@@ -27,7 +27,7 @@ function BlogCard() {
           easily adapt or customize it for any kind of CMS or website builder.
           You are allowed to use it for your business. You are NOT allowed to
           re-distribute the template ZIP file on any template collection site
-          for the download purpose.{" "}
+          for the download purpose.
           <Link
             rel="nofollow"
             to=""

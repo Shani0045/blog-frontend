@@ -19,7 +19,7 @@ function BlogDetails() {
               <div className="all-blog-posts">
                 <div className="row">
                   <div className="col-lg-12">
-                    <BlogDetailsCard slug={slug} />
+                    <BlogDetailsCard slug= {slug} />
                     </div>
                   <div className="col-lg-7">
                     <CommentCard/>

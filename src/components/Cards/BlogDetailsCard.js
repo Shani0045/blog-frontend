@@ -1,10 +1,11 @@
 import React from "react";
 import CodeBlockCard from "./CodeBlockCard";
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import hljs from 'highlight.js';
 import 'highlight.js/styles/default.css';
-import { blogDetailsRequest } from "../../redux/actions/blogDetailsAction";
+import { blogDetailsRequest } from "../../redux/actions/blogs/blogDetailsAction";
+
 
 function PostDetailsCard(props) {
   const contentRef = useRef(null)
@@ -17,8 +18,8 @@ function PostDetailsCard(props) {
 
 
   useEffect(() => {
-    if (!loading && data.length) {
-      const dataObj = data[0];
+    if (!loading && data?.data?.length) {
+      const dataObj = data.data[0];
       const content = dataObj.content;
       contentRef.current.innerHTML = content;
       hljs.highlightAll();
@@ -27,7 +28,6 @@ function PostDetailsCard(props) {
 
 
   return (
-    
     <div className="blog-post">
       <div className="down-content p-lg-5">
         <span>Devops</span>

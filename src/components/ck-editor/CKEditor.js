@@ -43,12 +43,33 @@ const CkEditor = () => {
     return editor;
   };
 
+  const editorConfig = {
+    // Define the allowed content rules
+    // allowedContent: {
+        allowedContent: true, // Allow all content
+        // Define the extra allowed content rules for <pre> and <code> tags
+        extraAllowedContent: 'pre code[*]{*};',
+        // Allow specific HTML tags and attributes
+    //     tags: ['p', 'strong', 'em', 'pre', 'code', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'div'],
+    //     attributes: {
+    //         '*': ['class'], // Allow class attribute on all tags
+    //         'a': ['href', 'target'], // Allow href and target attributes on <a> tags
+    //     },
+    //     // Define the properties of specific tags
+    //     properties: {
+    //         'a': 'href', // Allow only href attribute on <a> tags
+    //     }
+    // },
+    // Other configurations...
+};
+
+
   return (
       <CKEditor
         editor={ClassicEditor}
+        config={ editorConfig }
         data={data}
         onChange={handleEditorChange}
-       
         onReady={(editor) => {
           editor.ui.view.editable.element.parentElement.insertBefore(
             editor.ui.view.toolbar.element,
