@@ -3,7 +3,6 @@ import { useSelector } from 'react-redux'
 
 function Categories() {
   const {loading, data, error } = useSelector( state => state.allBlog)
-
   return (
     <div className="sidebar-item categories">
       <div className="sidebar-heading">
@@ -11,6 +10,7 @@ function Categories() {
       </div>
       <div className="content">
       <ul>{
+          
             data && data.data && data.data.categories && 
             data.data.categories.map( c => (
               <li><a href="#">- {c.name}</a></li>

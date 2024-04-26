@@ -20,8 +20,8 @@ function Posts() {
       loading ? (
         <h2>Loading</h2>
       ) : (
-        data && data.data && data.data.length > 0 ? (
-          data.data.map( d => (
+        data && data.data && data.data?.blogs?.length > 0 ? (
+          data.data?.blogs?.map( d => (
             <div className="row" key={d.slug}>
               <div className="col-lg-12">
                 <HomeBlogCard title={d.title} slug={d.slug} description={d.content} />

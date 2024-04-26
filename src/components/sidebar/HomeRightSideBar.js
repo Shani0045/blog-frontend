@@ -11,9 +11,9 @@ function HomeRightSideBar() {
                 <RelatedPost/>
             </div>
 
-            <div className="col-lg-12 mt-3">
+            {/* <div className="col-lg-12 mt-3">
                 <Categories/>
-            </div>
+            </div> */}
 
             <div className="col-lg-12 mt-3">
                 <Tags/>
