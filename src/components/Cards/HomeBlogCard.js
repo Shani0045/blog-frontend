@@ -1,13 +1,16 @@
 import { Link } from "react-router-dom";
+import { useRef } from "react";
 
 function BlogCard(props) {
+ 
+
   return (
     <div className="blog-post">
-      <div className="blog-thumb">
+      {/* <div className="blog-thumb">
         <img src="assets/images/docker.png" alt />
-      </div>
+      </div> */}
       <div className="down-content">
-        <span>devops</span>
+        <span>{props.category}</span>
         <Link to={props.slug}>
           <h4>{props.title}</h4>
         </Link>
@@ -16,26 +19,14 @@ function BlogCard(props) {
             <Link to="#">Admin</Link>
           </li>
           <li>
-            <Link to="#">May 31, 2020</Link>
+            <Link to="#">{props.created_at}</Link>
           </li>
           <li>
-            <Link to="#">12 Comments</Link>
+            <Link to="#">6 Min Read</Link>
           </li>
         </ul>
-        <p>
-          Stand Blog is a free HTML CSS template for your CMS theme. You can
-          easily adapt or customize it for any kind of CMS or website builder.
-          You are allowed to use it for your business. You are NOT allowed to
-          re-distribute the template ZIP file on any template collection site
-          for the download purpose.
-          <Link
-            rel="nofollow"
-            to=""
-            target="_parent"
-          >
-            Contact TemplateMo
-          </Link>
-          for more info. Thank you.
+        <p class="my-2">
+        {props.metaDesc} <Link to={props.slug}>read more</Link>
         </p>
         <div className="post-options">
           <div className="row">
@@ -45,10 +36,7 @@ function BlogCard(props) {
                   <i className="fa fa-tags" />
                 </li>
                 <li>
-                  <Link to="#">Beauty</Link>,
-                </li>
-                <li>
-                  <Link to="#">Nature</Link>
+                  <Link to="#">{props.category}</Link>
                 </li>
               </ul>
             </div>

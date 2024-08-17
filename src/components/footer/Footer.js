@@ -21,7 +21,7 @@ function Footer() {
           </div>
           <div className="col-lg-12">
             <div className="copyright-text">
-              <p>Copyright 2020 E-learning</p>
+              <p>Copyright 2024 E-learning</p>
             </div>
           </div>
         </div>

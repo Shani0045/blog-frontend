@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-function HomeBlogCard() {
+function HomeBlogCard(props) {
   return (
     <div className="blog-post">
       <div className="blog-thumb">
@@ -10,7 +10,7 @@ function HomeBlogCard() {
       <div className="down-content">
         <span>Lifestyle</span>
         <Link to="/post-details">
-          <h4>Donec tincidunt leo</h4>
+          <h4>{props.title}</h4>
         </Link>
         <ul className="post-info">
           <li>
@@ -24,8 +24,7 @@ function HomeBlogCard() {
           </li>
         </ul>
         <p>
-          Nullam nibh mi, tincidunt sed sapien ut, rutrum hendrerit velit.
-          Integer auctor a mauris sit amet eleifend.
+          {props.metaDesc}
         </p>
         <div className="post-options">
           <div className="row">

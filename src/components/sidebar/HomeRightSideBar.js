@@ -7,17 +7,17 @@ function HomeRightSideBar() {
   return (
         <div className="sidebar">
         <div className="row">    
-            <div className="col-lg-12">
+            {/* <div className="col-lg-12">
                 <RelatedPost/>
-            </div>
-
-            {/* <div className="col-lg-12 mt-3">
-                <Categories/>
             </div> */}
 
             <div className="col-lg-12 mt-3">
                 <Tags/>
             </div>
+            <div className="col-lg-12 mt-3">
+                <Categories/>
+            </div>
+
         </div>
         </div>
   )

@@ -55,7 +55,7 @@ function CommentFormCard() {
             </div>
             <div className="col-lg-12">
               <fieldset>
-                <button type="submit" id="form-submit" className="main-button">
+                <button type="submit" id="form-submit" className="btn btn-sm p-2 main-button">
                   Submit
                 </button>
               </fieldset>

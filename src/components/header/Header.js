@@ -7,7 +7,7 @@ function Header() {
         <div className="container">
           <Link className="navbar-brand" to="index.html">
             <h2>
-              codeLearn<em>.com</em>
+              codeLearn<em>.</em>
             </h2>
           </Link>
           <button
@@ -46,7 +46,7 @@ function Header() {
               </li>
               <li className="nav-item">
                 <NavLink className="nav-link" to="/blogs" activeclassname="active">
-                  BLOGS
+                  ABOUT
                 </NavLink>
               </li>
               <li className="nav-item">
@@ -58,11 +58,6 @@ function Header() {
                 <NavLink className="nav-link" to="/blog-writer" activeclassname="active">
                   WRITE
                 </NavLink>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/#">
-                  FEEDBACK
-                </Link>
               </li>
             </ul>
             <button

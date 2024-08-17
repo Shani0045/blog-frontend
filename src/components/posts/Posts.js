@@ -24,7 +24,13 @@ function Posts() {
           data.data?.blogs?.map( d => (
             <div className="row" key={d.slug}>
               <div className="col-lg-12">
-                <HomeBlogCard title={d.title} slug={d.slug} description={d.content} />
+                <HomeBlogCard 
+                  title={d.title} slug={d.slug} 
+                  content={d.content} 
+                  metaDesc={d.meta_desc} 
+                  category={d.category}
+                  created_at={d.created_at} 
+                  />
               </div>
             </div>
           ))
