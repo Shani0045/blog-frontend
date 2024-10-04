@@ -2,8 +2,6 @@ import { Link } from "react-router-dom";
 import { useRef } from "react";
 
 function BlogCard(props) {
- 
-
   return (
     <div className="blog-post">
       {/* <div className="blog-thumb">
@@ -25,7 +23,7 @@ function BlogCard(props) {
             <Link to="#">6 Min Read</Link>
           </li>
         </ul>
-        <p class="my-2">
+        <p className="my-2">
         {props.metaDesc} <Link to={props.slug}>read more</Link>
         </p>
         <div className="post-options">
@@ -46,7 +44,7 @@ function BlogCard(props) {
                   <i className="fa fa-share-alt" />
                 </li>
                 <li>
-                  <Link to="#">Facebook</Link>,
+                  <Link to="#">Facebook, </Link>
                 </li>
                 <li>
                   <Link to="#"> Twitter</Link>

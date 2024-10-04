@@ -9,9 +9,6 @@ function CommentCard() {
       <div className="content">
         <ul>
           <li>
-            <div className="author-thumb">
-              <img src="assets/images/comment-author-01.jpg" alt />
-            </div>
             <div className="right-content">
               <h4>
                 Charles Kate<span>May 16, 2020</span>
@@ -25,9 +22,7 @@ function CommentCard() {
             </div>
           </li>
           <li>
-            <div className="author-thumb">
-              <img src="assets/images/comment-author-02.jpg" alt />
-            </div>
+            
             <div className="right-content">
               <h4>
                 Thirteen Man<span>May 20, 2020</span>
@@ -40,7 +35,6 @@ function CommentCard() {
           </li>
           <li>
             <div className="author-thumb">
-              <img src="assets/images/comment-author-03.jpg" alt />
             </div>
             <div className="right-content">
               <h4>
@@ -55,9 +49,7 @@ function CommentCard() {
             </div>
           </li>
           <li>
-            <div className="author-thumb">
-              <img src="assets/images/comment-author-02.jpg" alt />
-            </div>
+           
             <div className="right-content">
               <h4>
                 Thirteen Man<span>May 22, 2020</span>

@@ -3,9 +3,10 @@ import CodeBlockCard from "./CodeBlockCard";
 import { useRef, useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import hljs from 'highlight.js';
-import 'highlight.js/styles/default.css';
+import 'highlight.js/styles/stackoverflow-dark.css';
 import { blogDetailsRequest } from "../../redux/actions/blogs/blogDetailsAction";
-
+import PageProgressBar from "../styledcomponents/PageProgressBar";
+import { SkeltonBlogDetails } from "../styledcomponents/Skelton";
 
 function PostDetailsCard(props) {
   const contentRef = useRef(null)
@@ -16,18 +17,26 @@ function PostDetailsCard(props) {
     dispatch(blogDetailsRequest(props.slug));
   }, [dispatch]);
 
-
   useEffect(() => {
     if (!loading && data?.data?.length) {
       const dataObj = data.data[0];
       const content = dataObj.content;
       contentRef.current.innerHTML = content;
-      hljs.highlightAll();
+      const codeBlocks = document.querySelectorAll('pre code');
+      codeBlocks.forEach((block) => {
+        hljs.highlightElement(block); // Apply highlight.js to each code block
+      });
     }
   }, [loading, data]);
 
 
   return (
+    loading ? 
+    <>
+      <PageProgressBar/>
+      <SkeltonBlogDetails/>
+    </> :
+    (
     <div className="blog-post">
       <div className="down-content p-lg-5">
         <span>Devops</span>
@@ -78,7 +87,7 @@ function PostDetailsCard(props) {
         </div>
       </div>
     </div>
-  );
+  ));
 }
 
 export default PostDetailsCard;

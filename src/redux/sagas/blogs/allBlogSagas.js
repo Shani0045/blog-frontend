@@ -5,7 +5,8 @@ import { ALL_BLOG_REQUEST } from "../../actionTypes/blogs/allBlogType";
 
 
 export function* allBlogSaga(action) {
-    const response = yield call(() => allBlogs());
+    let payload = action.payload
+    const response = yield call(() => allBlogs(payload));
    
     if (!response.error) {
       yield put(allBlogSuccess(response));

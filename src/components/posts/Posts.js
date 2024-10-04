@@ -4,6 +4,9 @@ import HomeBlogCard from "../Cards/HomeBlogCard";
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { allBlogRequest } from "../../redux/actions/blogs/allBlogAction";
+import PageProgressBar from "../styledcomponents/PageProgressBar";
+import {SkeltonPost} from "../styledcomponents/Skelton";
+import NotFoundData from "../styledcomponents/PageNotFound";
 
 function Posts() {
   const { loading, data, error } = useSelector(state => state.allBlog);
@@ -13,12 +16,14 @@ function Posts() {
     dispatch(allBlogRequest());
   }, [dispatch]);
   
-
   return (
     <div className="all-blog-posts">
     {
       loading ? (
-        <h2>Loading</h2>
+        <>
+        <PageProgressBar/>
+        <SkeltonPost/>
+       </>
       ) : (
         data && data.data && data.data?.blogs?.length > 0 ? (
           data.data?.blogs?.map( d => (
@@ -35,7 +40,7 @@ function Posts() {
             </div>
           ))
         ) : (
-          <h2>No data available</h2>
+          <NotFoundData/>
         )
       )
     }          

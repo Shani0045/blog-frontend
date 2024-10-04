@@ -12,7 +12,7 @@ function Blogs() {
   const { loading, data, error } = useSelector(state => state.allBlog);
 
   useEffect(() => {
-    dispatch(allBlogRequest());
+    dispatch(allBlogRequest({}));
   }, [dispatch]);
 
   return (

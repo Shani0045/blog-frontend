@@ -15,7 +15,8 @@ function BlogWriter() {
 
   let [title, setTitle] = useState("")
   let [desc, setDesc] = useState("")
-  let [cat_id, setCat_id] = useState("")
+  let [cat_id, setCat_id] = useState()
+  let [lang, setLang] = useState()
 
   const postData = async (e, content) => {
     let resp;
@@ -29,16 +30,22 @@ function BlogWriter() {
         meta_desc: desc 
       };
       
-      resp = await postBlog(post);
+      let resp = await postBlog(post);
+      let icon="";
+      if (resp.status == "SUCCESS"){
+        icon = "success";
+      }else{
+        icon="error";
+      }
+      
       Swal.fire({
         position: "center",
-        icon: "success",
+        icon: icon,
         title: resp.message,
         showConfirmButton: false,
         timer: 2000
       });
-      
-   
+
     } catch (error) {
       Swal.fire({
         title: resp.status,
@@ -58,18 +65,26 @@ function BlogWriter() {
         <button className='btn btn-danger btn-sm mx-lg-2 text-white publish'>Delete</button>
         <input name="desc" className='mx-lg-2' type="text" value={desc} onChange={ e => setDesc(e.target.value) } placeholder="Blog Desc..." required />
         {cat_id}
-        <select class="form-select form-select-sm" aria-label=".form-select-sm example" onChange={ e => setCat_id(e.target.value) }>
+        <select required className="form-select form-select-sm" aria-label=".form-select-sm example" onChange={ e => setCat_id(e.target.value) }>
           <option selected>Select Category</option>
           { blogLoading ? <h1>Loading</h1> :(
             blogs && blogs.data && blogs.data?.categories.map(c => (
-              <option key={c.id} value={cat_id} >{c.name}</option>
+              <option key={c.id} value={c.id} >{c.name}</option>
             ))
             )
           }
         </select>
+        <select required className="form-select form-select-sm" aria-label=".form-select-sm example" onChange={ e => setLang(e.target.value) }>
+          <option selected>Select language</option>
+            <option key="1" value="python" >Python</option>
+            <option key="2" value="javascript">JavaScript</option>
+            <option key="3" value="java" >Java</option>
+            <option key="4" value="html">Html</option>
+            <option key="7" value="bash">Bash</option>
+        </select>
         <NavLink to="/preview" className='btn btn-sm mx-lg-2 text-white publish' style={{background:"#f48840"}}>Preview</NavLink>
     </form>
-        <CkEditor/>
+        <CkEditor lang={lang} />
     </div>
     </Layout>
   )

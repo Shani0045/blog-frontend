@@ -15,8 +15,8 @@ export const blogDetails = async (slug)=> {
 }
 
 
-export const allBlogs = async ()=> {
-  let resp = await getRequest({url: all_blogs})
+export const allBlogs = async (payload)=> {
+  let resp = await getRequest({url: all_blogs, params: payload})
   return resp
 }
 

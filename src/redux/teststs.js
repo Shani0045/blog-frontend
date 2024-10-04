@@ -2,15 +2,13 @@ import React, { useEffect, useState } from 'react';
 import { CKEditor } from '@ckeditor/ckeditor5-react';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic'; // CKEditor Classic build
 import hljs from 'highlight.js';
-import 'highlight.js/styles/stackoverflow-dark.css'; // Choose a theme for highlight.js
-import { useDispatch, useSelector } from 'react-redux';
+import 'highlight.js/styles/default.css'; // Choose a theme for highlight.js
 
-const CkEditor = ({lang}) => {
+const CkEditor = () => {
   const [editorData, setEditorData] = useState('');
-  const {loading, error, data} =  useSelector((state)=> state.globalData) 
-  const dispatch = useDispatch();
-  console.log(">>>>>>>>>>", lang);
-  
+
+
+
   const wrapCodeBlocks = (htmlString) => {
     const parser = new DOMParser();
     const doc = parser.parseFromString(htmlString, 'text/html');
@@ -43,7 +41,7 @@ const CkEditor = ({lang}) => {
         const pre = document.createElement('pre');
         const code = document.createElement('code');
         code.textContent = codeContent; // Use collected code content
-        code.classList.add(`language-${lang}`); // Apply syntax highlighting class
+        code.classList.add('language-javascript'); // Apply syntax highlighting class
   
         pre.appendChild(code);
   
@@ -82,14 +80,15 @@ const CkEditor = ({lang}) => {
     const rawData = editor.getData(); // Get raw editor data
     const wrappedData = wrapCodeBlocks(rawData); // Wrap code blocks in <pre><code>
     setEditorData(wrappedData); // Set the modified data
-    dispatch({type: "ckEditorData", payload: wrappedData})
   };
 
   return (
     <div>
+      <h2>Dynamic CKEditor with Table and Code Highlighting</h2>
+
       <CKEditor
         editor={ClassicEditor}
-        data=""
+        data="<p>Insert a table and use ```code``` inside the cells to indicate code blocks.</p>"
         config={{
           toolbar: [
             'heading', '|', 'bold', 'italic', 'link', 'bulletedList', 'numberedList', 'blockQuote',
@@ -98,15 +97,15 @@ const CkEditor = ({lang}) => {
           table: {
             contentToolbar: ['tableColumn', 'tableRow', 'mergeTableCells'],
           },
-          tabSpaces: 4,
         }}
         onChange={handleEditorChange} // Handle editor changes
       />
 
       <div className="output">
-        <div 
-        className="content"
-          dangerouslySetInnerHTML={{ __html: data }}
+        <h3>Rendered Output with Syntax Highlighting</h3>
+        <div
+          className="content"
+          dangerouslySetInnerHTML={{ __html: editorData }} // Render CKEditor content
         />
       </div>
     </div>

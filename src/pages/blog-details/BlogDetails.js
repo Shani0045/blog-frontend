@@ -7,9 +7,7 @@ import HomeRightSideBar from "../../components/sidebar/HomeRightSideBar";
 import { useParams } from "react-router-dom";
 
 function BlogDetails() {
-
   const {slug} = useParams()
-
   return (
     <Layout>
       <section className="blog-posts grid-system">

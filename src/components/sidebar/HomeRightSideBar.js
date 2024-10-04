@@ -1,7 +1,6 @@
 import React from 'react'
 import RelatedPost from '../related-post/RelatedPost'
 import Categories from '../categories/Categories'
-import Tags from '../tags/Tags'
 
 function HomeRightSideBar() {
   return (
@@ -11,12 +10,12 @@ function HomeRightSideBar() {
                 <RelatedPost/>
             </div> */}
 
-            <div className="col-lg-12 mt-3">
-                <Tags/>
-            </div>
-            <div className="col-lg-12 mt-3">
+            <div className="col-lg-12 mt-lg-1">
                 <Categories/>
             </div>
+            {/* <div className="col-lg-12 mt-3">
+                <Categories/>
+            </div> */}
 
         </div>
         </div>

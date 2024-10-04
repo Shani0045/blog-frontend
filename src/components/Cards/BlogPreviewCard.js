@@ -4,7 +4,7 @@ import { useRef, useEffect } from "react";
 import { BLOG_DETAILS_REQUEST } from "../../redux/actionTypes/blogs/blogDetailsType";
 import { useDispatch, useSelector } from "react-redux";
 import hljs from 'highlight.js';
-import 'highlight.js/styles/default.css';
+import 'highlight.js/styles/stackoverflow-dark.css';
 
 
 function BlogPreviewCard() {
@@ -14,21 +14,21 @@ function BlogPreviewCard() {
   const dispatch = useDispatch()
 
 
-  useEffect(() => {
+  // useEffect(() => {
 
-    // dispatch({"type":POST_REQUEST, payload:{}})
+  //   // dispatch({"type":POST_REQUEST, payload:{}})
 
-    if (contentRef.current) {
-        contentRef.current.innerHTML = data;
-        const preTag = document.createElement('pre');
-        // preTag.textContent = dynamicContent;
-        document.querySelectorAll("td").forEach((el) => {
-        // el.setAttribute("class", "language-python")
-        // hljs.highlightElement(el);
+  //   if (contentRef.current) {
+  //       contentRef.current.innerHTML = data;
+  //       const preTag = document.createElement('pre');
+  //       // preTag.textContent = dynamicContent;
+  //       document.querySelectorAll("td").forEach((el) => {
+  //       // el.setAttribute("class", "language-python")
+  //       // hljs.highlightElement(el);
 
-      });
-    }
-  });
+  //     });
+  //   }
+  // });
 
 
   return (
