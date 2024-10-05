@@ -76,6 +76,7 @@ function BlogWriter() {
         </select>
         <select required className="form-select form-select-sm" aria-label=".form-select-sm example" onChange={ e => setLang(e.target.value) }>
           <option selected>Select language</option>
+            <option key="0" value="plaintext" >plain Text</option>
             <option key="1" value="python" >Python</option>
             <option key="2" value="javascript">JavaScript</option>
             <option key="3" value="java" >Java</option>

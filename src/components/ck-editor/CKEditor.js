@@ -9,7 +9,6 @@ const CkEditor = ({lang}) => {
   const [editorData, setEditorData] = useState('');
   const {loading, error, data} =  useSelector((state)=> state.globalData) 
   const dispatch = useDispatch();
-  console.log(">>>>>>>>>>", lang);
   
   const wrapCodeBlocks = (htmlString) => {
     const parser = new DOMParser();
