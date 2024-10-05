@@ -21,7 +21,7 @@ export default function SearchBar({ onSearch }) {
         placeholder="Search..."
         value={query}
         onChange={handleSearch}
-        size="small" // Reduces the height
+        size="small" // Reduces the 
         sx={{
           width: '250px',  // Width of the search bar
           '.MuiOutlinedInput-root': {

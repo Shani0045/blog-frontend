@@ -64,8 +64,8 @@ function Contact() {
                                     <span>EMAIL ADDRESS</span>
                                 </li>
                                 <li>
-                                    <h5>123 Aenean id posuere dui, 
-                                    <br />Praesent laoreet 10660</h5>
+                                    <h5>Noida Sector-15  
+                                    <br />Uttar Pradesh</h5>
                                     <span>STREET ADDRESS</span>
                                 </li>
                                 </ul>
