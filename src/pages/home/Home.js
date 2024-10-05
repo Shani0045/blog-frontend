@@ -4,9 +4,6 @@ import Banner from '../../components/banner/Banner'
 import Posts from '../../components/posts/Posts'
 import HomeLeftSidebar from '../../components/sidebar/HomeLeftSidebar'
 import HomeRightSideBar from '../../components/sidebar/HomeRightSideBar'
-import { useDispatch } from 'react-redux'
-import { useEffect } from 'react'
-import { allBlogRequest } from '../../redux/actions/blogs/allBlogAction'
 
 function Home() {
   return (
