@@ -13,6 +13,17 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+.wrapper{
+	display: flex;
+	min-height: 100vh;
+	flex-direction: column;
+}
+
+.main-content{
+	flex-grow: 1;
+}
+
 p {
 	margin-bottom: 0px;
 	font-size: 15px;
@@ -32,6 +43,7 @@ ul {
 h1,h2,h3,h4,h5,h6 {
 	margin: 0px;
 }
+
 
 .main-button a {
 	display: inline-block;
@@ -730,6 +742,8 @@ ul.page-numbers li a:hover {
 }
 
 
+
+
 .sidebar .sidebar-heading h2 {
 	font-size: 18px;
 	text-transform:none uppercase;
@@ -849,8 +863,10 @@ ul.page-numbers li a:hover {
 /* Footer */
 
 footer {
-	margin-top: 10px;
+	width: 100%;
+	margin-top: 15px;
 	text-align: center;
+	display: flex;
 	background-color: #20232e;
 }
 

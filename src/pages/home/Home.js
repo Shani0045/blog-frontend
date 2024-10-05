@@ -6,7 +6,7 @@ import HomeRightSideBar from '../../components/sidebar/HomeRightSideBar'
 function Home() {
   return (
     <Layout>
-      <section className="blog-posts mt-3">
+      <section className="blog-posts main-content mt-3">
       <div className="container">
           <div className="row">
             <div className="col-lg-8">

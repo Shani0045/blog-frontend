@@ -39,7 +39,6 @@ function PostDetailsCard(props) {
     (
     <div className="blog-post">
       <div className="down-content p-lg-5">
-        <span>Devops</span>
         <ul className="post-info">
           <li>
             <a href="#">Admin</a>
