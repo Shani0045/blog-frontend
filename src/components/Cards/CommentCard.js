@@ -7,57 +7,24 @@ function CommentCard() {
         <h2>4 comments</h2>
       </div>
       <div className="content">
-        <ul>
+        <ul style={{display: "flex", flexDirection:"column"}}>
           <li>
             <div className="right-content">
-              <h4>
+              <h4 style={{fontWeight: 500}}>
                 Charles Kate<span>May 16, 2020</span>
               </h4>
               <p>
-                Fusce ornare mollis eros. Duis et diam vitae justo fringilla
-                condimentum eu quis leo. Vestibulum id turpis porttitor sapien
-                facilisis scelerisque. Curabitur a nisl eu lacus convallis
-                eleifend posuere id tellus.
+               Great Job Keep it!
               </p>
             </div>
           </li>
           <li>
-            
             <div className="right-content">
-              <h4>
-                Thirteen Man<span>May 20, 2020</span>
-              </h4>
-              <p>
-                In porta urna sed venenatis sollicitudin. Praesent urna sem,
-                pulvinar vel mattis eget.
-              </p>
-            </div>
-          </li>
-          <li>
-            <div className="author-thumb">
-            </div>
-            <div className="right-content">
-              <h4>
-                Belisimo Mama<span>May 16, 2020</span>
-              </h4>
-              <p>
-                Nullam nec pharetra nibh. Cras tortor nulla, faucibus id
-                tincidunt in, ultrices eget ligula. Sed vitae suscipit ligula.
-                Vestibulum id turpis volutpat, lobortis turpis ac, molestie
-                nibh.
-              </p>
-            </div>
-          </li>
-          <li>
-           
-            <div className="right-content">
-              <h4>
+              <h4 style={{fontWeight: 500}}>
                 Thirteen Man<span>May 22, 2020</span>
               </h4>
               <p>
-                Mauris sit amet justo vulputate, cursus massa congue, vestibulum
-                odio. Aenean elit nunc, gravida in erat sit amet, feugiat
-                viverra leo.
+               Nice information 
               </p>
             </div>
           </li>
