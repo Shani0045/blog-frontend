@@ -1,7 +1,5 @@
 import React from 'react'
 import Layout from '../../components/layout/Layout'
-import Banner from '../../components/banner/Banner'
-import Posts from '../../components/posts/Posts'
 import HomeLeftSidebar from '../../components/sidebar/HomeLeftSidebar'
 import HomeRightSideBar from '../../components/sidebar/HomeRightSideBar'
 

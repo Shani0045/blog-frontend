@@ -19,7 +19,7 @@ export default function NotFoundPage() {
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
-        height: '90vh', // Full screen height to center vertically
+        height: '99vh', // Full screen height to center vertically
         textAlign: 'center',
         backgroundColor: '#f5f5f5', // Light background color
         padding: 2,

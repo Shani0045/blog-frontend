@@ -1,6 +1,4 @@
 import { Link, NavLink } from "react-router-dom";
-import PageProgressBar from "../styledcomponents/PageProgressBar";
-import SearchBar from "../styledcomponents/Searchbar";
 
 function Header() {
   return (
@@ -39,7 +37,7 @@ function Header() {
             </div>
             </div>
             <ul className="navbar-nav ml-auto">
-              <li className="nav-item {window.location.href}">
+              <li className="nav-item">
                 <NavLink className="nav-link" to="/" activeclassname="active">
                   Home
                   <span className="sr-only">(current)</span>

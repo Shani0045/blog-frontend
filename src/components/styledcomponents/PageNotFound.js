@@ -1,16 +1,9 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
 import ErrorOutlineIcon from '@mui/icons-material/ErrorOutline';
-import { useNavigate } from 'react-router-dom'; // Assuming you're using React Router
 
 export default function NotFoundData() {
-  const navigate = useNavigate(); // React Router hook for navigation
-
-  const goToHome = () => {
-    navigate('/'); // Redirect to homepage
-  };
 
   return (
     <Box
