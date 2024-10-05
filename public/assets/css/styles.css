@@ -853,7 +853,7 @@ ul.page-numbers li a:hover {
 	color: #fff;
 }
 
-.sidebar .tags ul li a.active {
+.sidebar .tags ul .active {
 	background-color: #f48840;
 	border-color: #f48840;
 	color: #fff;
@@ -954,8 +954,10 @@ footer p a:hover {
 
 /* Contact Form */
 
-/* .contact-us .down-contact,
-.contact-us #map {
+.contact-us .down-contact{
+	width: 100%;
+}
+/* .contact-us #map {
 	margin-top: 8px;
 } */
 
@@ -969,6 +971,8 @@ footer p a:hover {
 	padding-bottom: 15px;
 	margin-bottom: 25px;
 }
+
+
 
 
 .contact-us .contact-form input {
@@ -1124,11 +1128,13 @@ footer p a:hover {
 		left: 30px;
 		top: 8px;
 	}
-
+	
 	.border{
-		width: 60%;
+		width: 70%;
 		margin: auto;
-	}	
+		margin-top: 10px;
+	}
+		
 	.background-header .navbar-brand,
 	.background-header .navbar-toggler {
 		top: 15px;
@@ -1142,7 +1148,7 @@ footer p a:hover {
 	#navbarResponsive {
 	    z-index: 99999;
 	    position: absolute;
-	    top: 80px;
+	    top: 60px;
 	    left: 0;
 	    width: 100%;
 	    text-align: center;

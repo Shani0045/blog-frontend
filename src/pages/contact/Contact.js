@@ -8,9 +8,9 @@ function Contact() {
                 <div className="container">
                 <div className="row">
                     <div className="col-lg-12">
-                    <div className="down-contact">
+                    <div className="down-contact border px-3">
                         <div className="row">
-                        <div className="col-lg-8 shadow-sm border py-3">
+                        <div className="col-lg-8 shadow-sm py-3">
                             <div className="sidebar-item contact-form ">
                             <div className="sidebar-heading">
                                 <h2>Send us a message</h2>

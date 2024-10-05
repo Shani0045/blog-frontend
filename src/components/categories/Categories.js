@@ -4,6 +4,7 @@ import { allBlogRequest } from "../../redux/actions/blogs/allBlogAction";
 import { categoriesRequest } from "../../redux/actions/blogs/allCategoriesAction";
 import { SkeltonCategory } from '../styledcomponents/Skelton';
 import { Link } from "react-router-dom";
+import {Chip, Box} from '@mui/material';
 
 
 
@@ -23,21 +24,44 @@ function Categories() {
 
   return (
     <div className="sidebar-item tags">
-        <div className="sidebar-heading">
-        <h2>Categories</h2>
-        </div>
-        <div className="content">
-        <ul>
-        {loading ? <SkeltonCategory/> :(
-          data && data.data && 
-          data.data.map( (c) => (
-            <li key={c.id}><Link onClick={e => handleBlogList(c.id)} to={`/?category=${c.name}`} className={c.id == cat ? 'active' : ''}>{c.name}</Link></li>
-          ))
-          )
-        }
-        </ul>
-        </div>
+    <div className="sidebar-heading">
+      <h2>Categories</h2>
     </div>
+    <div className="content">
+      <ul>
+        {loading ? (
+          <SkeltonCategory />
+        ) : (
+          data &&
+          data.data &&
+          data.data.map((c) => (
+            <React.Fragment key={c.id}>
+              <Chip className={c.id == cat ? 'active' : ''} 
+                onClick={(e) => handleBlogList(c.id)} 
+                label={c.name} 
+                variant="outlined" 
+                sx={{ m:0.6, textTransform:"capitalize", 
+                color:" #7a7a7a"
+                }} />
+
+              {/* If you need this Link component, uncomment it and wrap it properly */}
+              {/* 
+                <li>
+                  <Link 
+                    onClick={(e) => handleBlogList(c.id)} 
+                    to={`/?category=${c.name}`} 
+                    className={c.id == cat ? 'active' : ''}
+                  >
+                    {c.name}
+                  </Link>
+                </li> 
+              */}
+            </React.Fragment>
+          ))
+        )}
+      </ul>
+    </div>
+  </div>  
   )
 }
 

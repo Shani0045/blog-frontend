@@ -10,7 +10,7 @@ function HomeRightSideBar() {
                 <RelatedPost/>
             </div> */}
 
-            <div className="col-lg-12 mt-lg-1">
+            <div className="col-lg-12 mt-sm-1">
                 <Categories/>
             </div>
             {/* <div className="col-lg-12 mt-3">
