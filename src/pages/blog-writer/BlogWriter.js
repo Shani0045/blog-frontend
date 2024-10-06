@@ -1,22 +1,31 @@
 import React, { useEffect, useState } from 'react'
 import CkEditor from '../../components/ck-editor/CKEditor'
 import Layout from '../../components/layout/Layout'
-import Editor from '../../components/ck-editor/Editor'
 import { NavLink } from 'react-router-dom'
 import { postBlog } from '../../services/blogs/blogService'
-import { useSelector } from 'react-redux'
 import Swal from 'sweetalert2'
+import { allCategories } from '../../services/blogs/blogService';
 
 
 function BlogWriter() {
-
-  const { loading, error, data } = useSelector((state) => state.globalData);
-  const { loading: blogLoading, error: blogError, data:blogs } = useSelector((state) => state.allBlog);
-
+  let [data, setData] = useState([])
   let [title, setTitle] = useState("")
   let [desc, setDesc] = useState("")
   let [cat_id, setCat_id] = useState()
   let [lang, setLang] = useState()
+  let [blogLoading, setBlogLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchData = async ()=>{
+      let data = await allCategories()
+      if (data.status == "SUCCESS"){
+        setData(data.data)
+      }
+      setBlogLoading(false);
+    }
+  fetchData();
+    
+  }, []);
 
   const postData = async (e, content) => {
     let resp;
@@ -64,17 +73,16 @@ function BlogWriter() {
         <button className='btn btn-success btn-sm mx-lg-2 text-white publish' type="submit">Save and publish</button>
         <button className='btn btn-danger btn-sm mx-lg-2 text-white publish'>Delete</button>
         <input name="desc" className='mx-lg-2' type="text" value={desc} onChange={ e => setDesc(e.target.value) } placeholder="Blog Desc..." required />
-        {cat_id}
-        <select required className="form-select form-select-sm" aria-label=".form-select-sm example" onChange={ e => setCat_id(e.target.value) }>
+        <select required className="col-5  form-select" aria-label="Default select example" onChange={ e => setCat_id(e.target.value) }>
           <option selected>Select Category</option>
           { blogLoading ? <h1>Loading</h1> :(
-            blogs && blogs.data && blogs.data?.categories.map(c => (
+            data.length && data.map(c => (
               <option key={c.id} value={c.id} >{c.name}</option>
             ))
             )
           }
         </select>
-        <select required className="form-select form-select-sm" aria-label=".form-select-sm example" onChange={ e => setLang(e.target.value) }>
+        <select required className="mx-2 col-5 form-select" aria-label="Default select example" onChange={ e => setLang(e.target.value) }>
           <option selected>Select language</option>
             <option key="0" value="plaintext" >plain Text</option>
             <option key="1" value="python" >Python</option>
@@ -83,9 +91,11 @@ function BlogWriter() {
             <option key="4" value="html">Html</option>
             <option key="7" value="bash">Bash</option>
         </select>
-        <NavLink to="/preview" className='btn btn-sm mx-lg-2 text-white publish' style={{background:"#f48840"}}>Preview</NavLink>
+        <NavLink to="/preview" className='btn btn-sm mx-lg-2my-2 text-white publish' style={{background:"#f48840"}}>Preview</NavLink>
     </form>
+        <div class="my-3">
         <CkEditor lang={lang} />
+        </div>
     </div>
     </Layout>
   )
