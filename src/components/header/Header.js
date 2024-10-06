@@ -28,7 +28,7 @@ function Header() {
               <form id="search_form" name="gs" method="GET" action="#">
                   <input
                   type="text"
-                  name="q"
+                  name="search"
                   className="searchText"
                   placeholder="Type to search..."
                   autoComplete="on"

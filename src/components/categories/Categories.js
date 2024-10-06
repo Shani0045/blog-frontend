@@ -1,10 +1,10 @@
 import React, {useEffect, useState} from 'react'
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { allBlogRequest } from "../../redux/actions/blogs/allBlogAction";
-import { categoriesRequest } from "../../redux/actions/blogs/allCategoriesAction";
 import { SkeltonCategory } from '../styledcomponents/Skelton';
 import { Chip } from '@mui/material';
 import { allCategories } from '../../services/blogs/blogService';
+import { Link } from 'react-router-dom';
 
 
 function Categories() {
@@ -43,26 +43,17 @@ function Categories() {
           data?.length &&
           data.map((c) => (
             <React.Fragment key={c.id}>
-              <Chip className={c.id == cat ? 'active' : ''} 
+              <Link 
                 onClick={(e) => handleBlogList(c.id)} 
+                to={`/?category=${c.name}`} 
+              >
+              <Chip className={c.id == cat ? 'active' : ''}
                 label={c.name} 
                 variant="outlined" 
-                sx={{ m:0.6, textTransform:"capitalize", 
+                sx={{ m:0.6, textTransform:"capitalize",
                 color:" #7a7a7a"
-                }} />
-
-              {/* If you need this Link component, uncomment it and wrap it properly */}
-              {/* 
-                <li>
-                  <Link 
-                    onClick={(e) => handleBlogList(c.id)} 
-                    to={`/?category=${c.name}`} 
-                    className={c.id == cat ? 'active' : ''}
-                  >
-                    {c.name}
-                  </Link>
-                </li> 
-              */}
+              }} />
+              </Link>
             </React.Fragment>
           ))
         )}

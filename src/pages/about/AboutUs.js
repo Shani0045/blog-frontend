@@ -47,9 +47,6 @@ const AboutMe = () => {
             <Typography variant="h5" gutterBottom sx={{m:2, fontWeight:500}}>
               SHANI KUMAR
             </Typography>
-            <Typography variant="h6" gutterBottom>
-           
-            </Typography>
             <Typography variant="body1">
             I'm Shani Kumar, a Software Engineer with a passion for building user-friendly, scalable applications. Skilled in technologies Python, React, Docker, Kubernetes, I love tackling challenges and learning new things. Let’s connect!
             </Typography>
