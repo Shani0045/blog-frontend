@@ -3,19 +3,27 @@ import { useDispatch, useSelector } from "react-redux";
 import { allBlogRequest } from "../../redux/actions/blogs/allBlogAction";
 import { categoriesRequest } from "../../redux/actions/blogs/allCategoriesAction";
 import { SkeltonCategory } from '../styledcomponents/Skelton';
-import { Link } from "react-router-dom";
-import {Chip, Box} from '@mui/material';
-
+import { Chip } from '@mui/material';
+import { allCategories } from '../../services/blogs/blogService';
 
 
 function Categories() {
   const dispatch  = useDispatch();
-  const {loading, data, error } = useSelector( state => state.allCategories);
   let [cat, setCat] = useState(null);
+  let [data, setData] = useState([])
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    dispatch(categoriesRequest());
-  }, [dispatch]);
+    const fetchData = async ()=>{
+      let data = await allCategories()
+      if (data.status == "SUCCESS"){
+        setData(data.data)
+      }
+      setLoading(false);
+    }
+  fetchData();
+    
+  }, []);
 
   const handleBlogList = (id)=>{
     dispatch(allBlogRequest({"category_id": id}));
@@ -32,9 +40,8 @@ function Categories() {
         {loading ? (
           <SkeltonCategory />
         ) : (
-          data &&
-          data.data &&
-          data.data.map((c) => (
+          data?.length &&
+          data.map((c) => (
             <React.Fragment key={c.id}>
               <Chip className={c.id == cat ? 'active' : ''} 
                 onClick={(e) => handleBlogList(c.id)} 

@@ -1,35 +1,39 @@
 import React from "react";
-import CodeBlockCard from "./CodeBlockCard";
 import { useRef, useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
 import hljs from 'highlight.js';
 import 'highlight.js/styles/stackoverflow-dark.css';
-import { blogDetailsRequest } from "../../redux/actions/blogs/blogDetailsAction";
 import PageProgressBar from "../styledcomponents/PageProgressBar";
 import { SkeltonBlogDetails } from "../styledcomponents/Skelton";
 import { blogDetails } from "../../services/blogs/blogService";
 
 function PostDetailsCard(props) {
-  const contentRef = useRef(null)
-  const dispatch = useDispatch()
-  const {loading, data, error} = useSelector((state)=> state.blogDetails)
-  
-  useEffect(() => {
-    dispatch(blogDetailsRequest(props.slug));
-  }, [dispatch]);
+  const contentRef = useRef(null);
+  const [data, setdata] = useState([]);
+  const [loading, setLoading] = useState(true); 
 
   useEffect(() => {
-    if (!loading && data?.data?.length) {
-      const dataObj = data.data[0];
+    const fetchData = async ()=>{
+        let data = await blogDetails(props.slug)
+        if (data.status == "SUCCESS"){
+          setdata(data.data)
+        }
+        setLoading(false);
+      }
+    fetchData();
+  }, [props.slug]);
+
+  
+  useEffect(() => {
+    if (!loading && data?.length) {
+      const dataObj = data[0];
       const content = dataObj.content;
       contentRef.current.innerHTML = content;
       const codeBlocks = document.querySelectorAll('pre code');
       codeBlocks.forEach((block) => {
-        hljs.highlightElement(block); // Apply highlight.js to each code block
+        hljs.highlightElement(block);
       });
     }
   }, [loading, data]);
-
 
   return (
     loading ? 
