@@ -51,7 +51,7 @@ const AboutMe = () => {
            
             </Typography>
             <Typography variant="body1">
-            I'm Shani Kumar, a Software Engineer with a passion for building user-friendly, scalable applications. Skilled in technologies, e.g., React, Docker, Kubernetes, I love tackling challenges and learning new things. Let’s connect!
+            I'm Shani Kumar, a Software Engineer with a passion for building user-friendly, scalable applications. Skilled in technologies Python, React, Docker, Kubernetes, I love tackling challenges and learning new things. Let’s connect!
             </Typography>
             <ContactInfo>
               <ListItem>

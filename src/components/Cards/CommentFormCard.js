@@ -9,7 +9,7 @@ function CommentFormCard() {
       <div className="content">
         <form id="comment" action="#" method="post">
           <div className="row">
-            <div className="col-md-6 col-sm-12">
+            {/* <div className="col-md-6 col-sm-12">
               <fieldset>
                 <input
                   name="name"
@@ -40,7 +40,7 @@ function CommentFormCard() {
                   placeholder="Subject"
                 />
               </fieldset>
-            </div>
+            </div> */}
             <div className="col-lg-12">
               <fieldset>
                 <textarea
