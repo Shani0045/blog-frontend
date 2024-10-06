@@ -1,6 +1,34 @@
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useLocation, useSearchParams, useNavigate } from "react-router-dom";
+import { useState, useRef, useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { allBlogRequest } from "../../redux/actions/blogs/allBlogAction";
+import { current } from "@reduxjs/toolkit";
 
 function Header() {
+  const dispatch  = useDispatch();
+  const navigate = useNavigate();
+  let [searchVal, setSearchVal] = useState("");
+  const location = useLocation();
+  const [visisbleSearch, setVisibleSearch] = useState(true); 
+
+  useEffect(()=>{
+    if(location.pathname == "/"){
+      setVisibleSearch(true);
+    }else{
+      setVisibleSearch(false);
+    }
+  }, [])
+  
+  let handleBlogList = (event)=>{
+    event.preventDefault();
+    dispatch(allBlogRequest({"search": searchVal}));
+      if (searchVal){
+        navigate(`/?search=${searchVal}`);
+      }else{
+        navigate("/")
+      }
+    }
+
   return (
     <header className="sticky-top shadow-sm">
       <nav className="navbar navbar-expand-lg">
@@ -10,7 +38,6 @@ function Header() {
               E-Learning<em>.</em>
             </h2>
           </Link>
-          {/* <SearchBar/> */}
           <button
             className="navbar-toggler"
             type="button"
@@ -23,19 +50,23 @@ function Header() {
             <span className="navbar-toggler-icon" />
           </button>
           <div className="collapse navbar-collapse" id="navbarResponsive">
-            <div className="border">
-              <div className="sidebar-item search">
-              <form id="search_form" name="gs" method="GET" action="#">
-                  <input
-                  type="text"
-                  name="search"
-                  className="searchText"
-                  placeholder="Type to search..."
-                  autoComplete="on"
-                  />
-            </form>
-            </div>
-            </div>
+          {visisbleSearch &&
+              (<div className="border">
+                <div className="sidebar-item search">
+                <form id="search_form" onSubmit={handleBlogList} name="gs" method="GET" action="">
+                    <input
+                    type="text"
+                    name="search"
+                    className="searchText"
+                    placeholder="Type to search..."
+                    autoComplete="on"
+                    value={searchVal}
+                    onChange={(e) => setSearchVal(e.target.value)}
+                    />
+              </form>
+              </div>
+              </div>
+              )}
             <ul className="navbar-nav ml-auto">
               <li className="nav-item">
                 <NavLink className="nav-link" to="/" activeclassname="active">

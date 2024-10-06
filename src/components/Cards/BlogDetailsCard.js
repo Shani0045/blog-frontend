@@ -16,6 +16,7 @@ function PostDetailsCard(props) {
         let data = await blogDetails(props.slug)
         if (data.status == "SUCCESS"){
           setdata(data.data)
+          window.scrollTo({ top: 0, behavior: 'smooth' });
         }
         setLoading(false);
       }

@@ -2,13 +2,15 @@ import React, { useEffect, useState } from 'react'
 import CkEditor from '../../components/ck-editor/CKEditor'
 import Layout from '../../components/layout/Layout'
 import { NavLink } from 'react-router-dom'
+import { useSelector } from 'react-redux'
 import { postBlog } from '../../services/blogs/blogService'
 import Swal from 'sweetalert2'
 import { allCategories } from '../../services/blogs/blogService';
 
 
 function BlogWriter() {
-  let [data, setData] = useState([])
+  const { loading, error, data } = useSelector((state) => state.globalData);
+  let [catData, setCatData] = useState([])
   let [title, setTitle] = useState("")
   let [desc, setDesc] = useState("")
   let [cat_id, setCat_id] = useState()
@@ -19,7 +21,7 @@ function BlogWriter() {
     const fetchData = async ()=>{
       let data = await allCategories()
       if (data.status == "SUCCESS"){
-        setData(data.data)
+        setCatData(data.data)
       }
       setBlogLoading(false);
     }
@@ -76,7 +78,7 @@ function BlogWriter() {
         <select required className="col-5  form-select" aria-label="Default select example" onChange={ e => setCat_id(e.target.value) }>
           <option selected>Select Category</option>
           { blogLoading ? <h1>Loading</h1> :(
-            data.length && data.map(c => (
+            catData.length && catData.map(c => (
               <option key={c.id} value={c.id} >{c.name}</option>
             ))
             )

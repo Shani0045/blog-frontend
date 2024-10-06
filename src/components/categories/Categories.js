@@ -27,6 +27,7 @@ function Categories() {
 
   const handleBlogList = (id)=>{
     dispatch(allBlogRequest({"category_id": id}));
+    window.scrollTo({ top: 0, behavior: 'smooth' });
     setCat(id)
   }
 

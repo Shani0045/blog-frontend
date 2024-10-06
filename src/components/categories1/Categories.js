@@ -10,7 +10,6 @@ function Categories() {
       </div>
       <div className="content">
       <ul>{
-          
             data && data.data && data.data.categories && 
             data.data.categories.map( c => (
               <li><a href="#">{c.name}</a></li>
