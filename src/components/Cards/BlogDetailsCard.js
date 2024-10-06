@@ -7,6 +7,7 @@ import 'highlight.js/styles/stackoverflow-dark.css';
 import { blogDetailsRequest } from "../../redux/actions/blogs/blogDetailsAction";
 import PageProgressBar from "../styledcomponents/PageProgressBar";
 import { SkeltonBlogDetails } from "../styledcomponents/Skelton";
+import { blogDetails } from "../../services/blogs/blogService";
 
 function PostDetailsCard(props) {
   const contentRef = useRef(null)
@@ -62,10 +63,10 @@ function PostDetailsCard(props) {
                   <i className="fa fa-tags" />
                 </li>
                 <li>
-                  <a href="#">Best Templates</a>,
+                  <a href="#">Category</a>,
                 </li>
                 <li>
-                  <a href="#">TemplateMo</a>
+                  <a href="#">Category</a>
                 </li>
               </ul>
             </div>
