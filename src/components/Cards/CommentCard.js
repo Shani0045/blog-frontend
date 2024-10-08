@@ -9,7 +9,7 @@ function CommentCard() {
   return (
     <div className="sidebar-item comments">
       <div className="sidebar-heading">
-        <h2>{data?.data?.count} comments</h2>
+        <h2>{data?.data?.count} Comments</h2>
       </div>
       <div className="content">
         <ul style={{display: "flex", flexDirection:"column"}}>

@@ -1,5 +1,5 @@
 import React from 'react'
-import RelatedPost from '../related-post/RelatedPost'
+import RelatedPost from '../related-posts/RelatedPosts'
 import Categories from '../categories/Categories'
 
 function HomeRightSideBar() {

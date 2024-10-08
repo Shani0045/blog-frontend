@@ -5,6 +5,7 @@ import CommentCard from "../../components/Cards/CommentCard";
 import CommentFormCard from "../../components/Cards/CommentFormCard";
 import HomeRightSideBar from "../../components/sidebar/HomeRightSideBar";
 import { useParams } from "react-router-dom";
+import RelatedPosts from "../../components/related-posts/RelatedPosts";
 
 function BlogDetails() {
   const {slug} = useParams()
@@ -18,7 +19,10 @@ function BlogDetails() {
                 <div className="row">
                   <div className="col-lg-12">
                     <BlogDetailsCard slug= {slug} />
-                    </div>
+                  </div>
+                  <div className="col-lg-12">
+                    <RelatedPosts/>
+                  </div>
                   <div className="col-lg-7">
                     <CommentCard/>
                   </div>
