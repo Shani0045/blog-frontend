@@ -13,6 +13,7 @@ function Categories() {
   let [data, setData] = useState([])
   const [loading, setLoading] = useState(true);
 
+
   useEffect(() => {
     const fetchData = async ()=>{
       let data = await allCategories()
@@ -29,6 +30,7 @@ function Categories() {
     dispatch(allBlogRequest({"category_id": id}));
     window.scrollTo({ top: 0, behavior: 'smooth' });
     setCat(id)
+    dispatch({type: "category_data", payload:{"category_id": id}})
   }
 
   return (

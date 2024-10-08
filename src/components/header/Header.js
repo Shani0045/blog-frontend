@@ -1,15 +1,15 @@
 import { Link, NavLink, useLocation, useSearchParams, useNavigate } from "react-router-dom";
 import { useState, useRef, useEffect } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { allBlogRequest } from "../../redux/actions/blogs/allBlogAction";
-import { current } from "@reduxjs/toolkit";
 
 function Header() {
   const dispatch  = useDispatch();
   const navigate = useNavigate();
   let [searchVal, setSearchVal] = useState("");
   const location = useLocation();
-  const [visisbleSearch, setVisibleSearch] = useState(true); 
+  const [visisbleSearch, setVisibleSearch] = useState(true);
+  // const category_id = useSelector(state => state.category_data)
 
   useEffect(()=>{
     if(location.pathname == "/"){
@@ -21,7 +21,14 @@ function Header() {
   
   let handleBlogList = (event)=>{
     event.preventDefault();
-    dispatch(allBlogRequest({"search": searchVal}));
+    dispatch({type:"search_data", payload: searchVal})
+    let payload = {"search": searchVal}
+
+    // if(catData?.data){
+    //   payload["category_id"] = catData.data
+    // }
+
+    dispatch(allBlogRequest(payload));
       if (searchVal){
         navigate(`/?search=${searchVal}`);
       }else{

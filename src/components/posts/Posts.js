@@ -8,11 +8,11 @@ import NotFoundData from "../styledcomponents/PageNotFound";
 
 function Posts() {
   const { loading, data, error } = useSelector(state => state.allBlog);
-
+  
   return (
     <div className="all-blog-posts">
    {
-    loading ? (
+  loading ? (
     <>
       <PageProgressBar />
       <SkeltonPost />

@@ -1,10 +1,9 @@
 import axios from "axios";
 
 
-export const getRequest = async ({url, params={}}) => {
-    
+export const getRequest = async ({url, data={}}) => {    
     try{
-        let resp = await axios.get(url, {params})
+        let resp = await axios.get(url, {params: data})
         return resp.data
         
     }catch(err){

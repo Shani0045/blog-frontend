@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import Posts from '../posts/Posts'
-import BlogPagination from '../styledcomponents/Pagination'
+import {BlogPagination} from '../styledcomponents/Pagination'
 import { useSelector, useDispatch } from "react-redux";
 import { allBlogRequest } from "../../redux/actions/blogs/allBlogAction";
 

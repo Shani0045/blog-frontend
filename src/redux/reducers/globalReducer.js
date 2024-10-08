@@ -8,12 +8,19 @@ const initialState = {
 const globalReducer = (state = initialState, action) => {
     switch (action.type) {
       case "ckEditorData":
-        return {
-          ...state,
-            loading: false,
-            error: null,
-            data: action.payload
-        };
+        return action.payload
+
+      case "category_data":
+        return action.payload
+
+      case "search_data":
+        return action.payload
+
+      case "blog":
+        return action.payload
+
+      case "blog_details":
+        return action.payload
   
       default:
         return state;
@@ -21,4 +28,3 @@ const globalReducer = (state = initialState, action) => {
 };
 
 export default globalReducer
-

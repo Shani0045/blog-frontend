@@ -25,7 +25,6 @@ function BlogDetails() {
                   <div className="col-lg-5">
                     <CommentFormCard/>
                   </div>
-
                 </div>
               </div>
             </div>

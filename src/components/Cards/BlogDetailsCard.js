@@ -5,22 +5,31 @@ import 'highlight.js/styles/stackoverflow-dark.css';
 import PageProgressBar from "../styledcomponents/PageProgressBar";
 import { SkeltonBlogDetails } from "../styledcomponents/Skelton";
 import { blogDetails } from "../../services/blogs/blogService";
+import { useDispatch } from "react-redux";
 
 function PostDetailsCard(props) {
   const contentRef = useRef(null);
   const [data, setdata] = useState([]);
-  const [loading, setLoading] = useState(true); 
+  const [loading, setLoading] = useState(true);
+  const dispatch = useDispatch(); 
 
   useEffect(() => {
     const fetchData = async ()=>{
         let data = await blogDetails(props.slug)
         if (data.status == "SUCCESS"){
-          setdata(data.data)
+            setdata(data.data)
+            if (data?.data[0]?.id){
+              dispatch({"type": "blog_details", payload: {"blog_id": data?.data[0]?.id}})
+            }
           window.scrollTo({ top: 0, behavior: 'smooth' });
         }
         setLoading(false);
       }
     fetchData();
+
+  return ()=>{
+    dispatch({"type": "blog_details", payload: {"blog_id": null}});
+  }
   }, [props.slug]);
 
   

@@ -8,6 +8,10 @@ let all_blogs = BASE_URL+"/blogs/all-blogs/"
 
 let Blog_post_url = BASE_URL+"/blogs/blog-post/"
 let categories_url = BASE_URL+"/blogs/all-category/"
+let comments_url = BASE_URL+"/blogs/comments/"
+let post_comments_url = BASE_URL+"/blogs/comment-post/"
+
+
 
 
 export const blogDetails = async (slug)=> {
@@ -17,7 +21,7 @@ export const blogDetails = async (slug)=> {
 
 
 export const allBlogs = async (payload)=> {
-  let resp = await getRequest({url: all_blogs, params: payload})
+  let resp = await getRequest({url: all_blogs, data: payload})
   return resp
 }
 
@@ -32,3 +36,13 @@ export const allCategories = async() =>{
   return resp
 }
 
+export const comments = async(payload) =>{
+  let resp = await getRequest({url:comments_url, data:payload})
+  return resp
+}
+
+
+export const postComments = async(payload) =>{
+  let resp = await postRequest({url:post_comments_url, data:payload})
+  return resp
+}
